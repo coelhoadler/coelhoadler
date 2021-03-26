@@ -6,8 +6,6 @@ Seja muito bem vindo!
 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/adlercoelhosantos/)](https://www.linkedin.com/in/adlercoelhosantos)
 
-Here are some ideas to get you started:
-
 <!-- 
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
