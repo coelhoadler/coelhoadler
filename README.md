@@ -1,7 +1,10 @@
-### Hi there 👋
+### "Oi galera, tudo bem?" 👋
 
-<!--
-**coelhoadler/coelhoadler** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Meu nome é Adler Coelho, comecei na área de desenvolvimento como "Faz tudo" e aos poucos fui me especializando. Hoje em dia meu foco de desenvolvimento é o Angular, porém estou estudando novas tecnologias web e fazendo umas POCs com elas por aqui. Nas horas vagas, curto me estressar um pouco nos jogos online rs
+
+Seja muito bem vindo!
+
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/adlercoelhosantos/)](https://www.linkedin.com/in/adlercoelhosantos)
 
 Here are some ideas to get you started:
 
