@@ -1,6 +1,6 @@
 ### "Oi galera, tudo bem?" 👋
 
-Meu nome é Adler Coelho, comecei na área de desenvolvimento como "Faz tudo" e aos poucos fui me especializando. Hoje em dia meu foco de desenvolvimento é o Angular, porém estou sempre estudando novas tecnologias web e fazendo umas POCs com elas por aqui. Nas horas vagas, curto me estressar um pouco nos jogos online rs 🎮🤣
+Meu nome é Adler Santos, comecei na área de desenvolvimento fazendo um pouco de tudo, e conforme o tempo foi passando, fui me especializando e hoje em dia meu foco é o desenvolvimento Web. Atualmente estou trabalhando com o Angular, porém tudo que envolve o desenvolvimento web me cativa, sempre estou fazendo umas POCs por aqui. Nas horas vagas, curto me estressar um pouco nos jogos online rs 🎮🤣
 
 Seja muito bem vindo!
 
