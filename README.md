@@ -1,18 +1,13 @@
-### "Oi galera, tudo bem?" 👋
+### 👋 Olá, mundo!
 
-Meu nome é Adler Santos, comecei na área de desenvolvimento fazendo um pouco de tudo, e conforme o tempo foi passando, fui me especializando e hoje em dia meu foco é o desenvolvimento Web. Atualmente estou trabalhando com o Angular, porém tudo que envolve o desenvolvimento web me cativa, sempre estou fazendo umas POCs por aqui. Nas horas vagas, curto me estressar um pouco nos jogos online rs 🎮🤣
+Sou **Adler Santos**, desenvolvedor web apaixonado por criar experiências digitais envolventes. Comecei explorando diversas áreas do desenvolvimento e, com o tempo, me especializei em desenvolvimento web, com foco atual em Angular.
 
-Seja muito bem vindo!
+### 🚀 Sobre mim
+🔹 Especialista em Angular, TypeScript e tecnologias web modernas <br>
+🔹 Sempre explorando novas ferramentas e frameworks <br>
+🔹 Gosto de criar POCs para testar ideias e novas tecnologias <br>
+🎮 Nos tempos livres, me aventuro nos jogos online (e aceito desafios!) <br>
+
+Seja muito bem-vindo(a) ao meu perfil! 🚀
 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/adlercoelhosantos/)](https://www.linkedin.com/in/adlercoelhosantos)
-
-<!-- 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
