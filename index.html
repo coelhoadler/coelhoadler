@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio pessoal de Adler Coelho - Desenvolvedor">
+    <title>Adler Coelho | Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Link de pular para conteúdo (acessibilidade) -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header role="banner">
+        <div class="header-content">
+            <span class="logo" aria-hidden="true">&lt;AC /&gt;</span>
+
+            <nav aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar modo escuro"
+                title="Alternar entre modo claro e escuro">
+                <span aria-hidden="true">🌙</span>
+                <span class="label">Tema</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Seção Hero -->
+        <section class="hero" aria-labelledby="hero-title">
+            <img src="foto-perfil.jpg" alt="Foto de perfil de Adler Coelho sorrindo" class="profile-photo" width="160"
+                height="160">
+            <h1 id="hero-title">Olá, eu sou <strong>Adler Coelho</strong> 👋</h1>
+            <p class="subtitle">
+                Desenvolvedor apaixonado por tecnologia, acessibilidade e boas práticas de desenvolvimento web.
+            </p>
+            <ul class="social-links" aria-label="Redes sociais">
+                <li>
+                    <a href="https://github.com/coelhoadler" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub de Adler Coelho (abre em nova aba)">
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/in/coelhoadler" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn de Adler Coelho (abre em nova aba)">
+                        LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Sobre mim -->
+        <section id="sobre" aria-labelledby="about-title">
+            <h2 id="about-title">Sobre mim</h2>
+            <p class="about-text">
+                Sou um desenvolvedor com experiência em criar aplicações web modernas e acessíveis.
+                Acredito que a tecnologia deve ser inclusiva e que boas práticas de desenvolvimento
+                fazem toda a diferença na experiência do usuário. Estou sempre em busca de aprender
+                novas tecnologias e aprimorar minhas habilidades.
+            </p>
+        </section>
+
+        <!-- Habilidades -->
+        <section id="habilidades" aria-labelledby="skills-title">
+            <h2 id="skills-title">Habilidades</h2>
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <h3>Front-end</h3>
+                    <p>Criação de interfaces responsivas e acessíveis com foco na experiência do usuário.</p>
+                    <div class="tags" aria-label="Tecnologias front-end">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Angular</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Back-end</h3>
+                    <p>Desenvolvimento de APIs robustas e escaláveis para aplicações modernas.</p>
+                    <div class="tags" aria-label="Tecnologias back-end">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">.NET</span>
+                        <span class="tag">REST APIs</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Banco de Dados</h3>
+                    <p>Modelagem e gerenciamento de dados com bancos relacionais e não-relacionais.</p>
+                    <div class="tags" aria-label="Tecnologias de banco de dados">
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <h3>DevOps & Ferramentas</h3>
+                    <p>Automação de deploys, controle de versão e integração contínua.</p>
+                    <div class="tags" aria-label="Ferramentas DevOps">
+                        <span class="tag">Git</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Azure</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Acessibilidade</h3>
+                    <p>Garantir que todos possam usar a web, seguindo as diretrizes WCAG.</p>
+                    <div class="tags" aria-label="Acessibilidade">
+                        <span class="tag">WCAG 2.1</span>
+                        <span class="tag">ARIA</span>
+                        <span class="tag">HTML Semântico</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Soft Skills</h3>
+                    <p>Colaboração, comunicação e resolução de problemas em equipe.</p>
+                    <div class="tags" aria-label="Soft skills">
+                        <span class="tag">Trabalho em equipe</span>
+                        <span class="tag">Comunicação</span>
+                        <span class="tag">Proatividade</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contato</h2>
+            <p class="about-text">
+                Quer trocar uma ideia ou trabalhar junto? Entre em contato comigo pelo
+                <a href="mailto:seu-email@exemplo.com">e-mail</a> ou pelas redes sociais acima.
+                Estou sempre aberto a novas oportunidades e colaborações!
+            </p>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; <span id="year"></span> Adler Coelho. Feito com HTML semântico e acessível.</p>
+    </footer>
+
+    <script>
+        // Ano dinâmico
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Toggle de tema com persistência
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle.querySelector('span[aria-hidden]');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function setTheme(dark) {
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+            icon.textContent = dark ? '☀️' : '🌙';
+            themeToggle.setAttribute('aria-label',
+                dark ? 'Alternar para modo claro' : 'Alternar para modo escuro'
+            );
+            localStorage.setItem('theme', dark ? 'dark' : 'light');
+        }
+
+        // Inicializar tema
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme === 'dark');
+        } else {
+            setTheme(prefersDark.matches);
+        }
+
+        // Evento de clique
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            setTheme(!isDark);
+        });
+
+        // Ouvir mudanças de preferência do sistema
+        prefersDark.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches);
+            }
+        });
+    </script>
+</body>
+
+</html>
