@@ -86,8 +86,8 @@
         <!-- Secao Hero -->
         <section class="flex flex-col items-center text-center gap-4 sm:gap-6 py-8 sm:py-12"
             aria-labelledby="hero-title">
-            <img src="assets/eu.jpg" alt="Foto de perfil de Adler Coelho pensando"
-                class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-sky-600 dark:border-sky-400 shadow-lg"
+            <img id="profile-photo" src="assets/eu.jpg" alt="Foto de perfil de Adler Coelho pensando"
+                class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-sky-600 dark:border-sky-400 shadow-lg cursor-pointer"
                 width="160" height="160">
             <h1 id="hero-title" class="text-2xl sm:text-3xl lg:text-4xl font-bold">
                 Olá, eu sou <strong>Adler Coelho</strong> 👋
@@ -319,6 +319,20 @@
                     menuIcon.textContent = '☰';
                 }
             });
+        });
+
+        // Easter egg: triple click na foto de perfil
+        let clickCount = 0;
+        let clickTimer = null;
+        document.getElementById('profile-photo').addEventListener('click', () => {
+            clickCount++;
+            clearTimeout(clickTimer);
+            if (clickCount === 3) {
+                clickCount = 0;
+                alert('Mari te amo muitão <3');
+            } else {
+                clickTimer = setTimeout(() => { clickCount = 0; }, 500);
+            }
         });
     </script>
 </body>
