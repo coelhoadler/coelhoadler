@@ -62,7 +62,7 @@ const translations = {
         aboutTitle: 'About me',
         aboutDesc: 'I\'m a developer experienced in building modern, performant, and accessible web applications. I believe technology should be inclusive and that good development practices make all the difference in user experience. I\'m always looking to learn new technologies to improve my current skills.',
         contactTitle: 'Contact',
-        contactDesc: 'Want to chat or work together? Reach me by <a href="mailto:adlercoelhosantos12@gmail.com" class="text-sky-600 dark:text-sky-400 hover:underline font-medium">email</a> or through my social links above. I\'m always open to new opportunities and collaborations!',
+        contactDesc: 'Want to chat or work together? Reach me by <a href="mailto:adlercoelhosantos12@gmail.com" class="text-sky-600 dark:text-sky-400 hover:underline font-medium">e-mail</a> or through my social links above. I\'m always open to new opportunities and collaborations!',
         footerText: 'Made with semantic and accessible HTML.',
         socialLabel: 'Social links',
         langAriaLabel: 'Select language',
