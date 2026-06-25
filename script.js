@@ -53,6 +53,10 @@ const translations = {
         langTitle: 'Alternar idioma',
         themeToggleDark: 'Alternar para modo escuro',
         themeToggleLight: 'Alternar para modo claro',
+        projectsTitle: "Meus Projetos",
+        meuCofrinDesc: "Um projeto de finanças pessoais desenvolvido para ajudar no controle de gastos e planejamento financeiro de forma simples e intuitiva.",
+        meuCofrinLink: "Acessar site",
+
     },
     en: {
         skipLink: 'Skip to main content',
@@ -69,6 +73,9 @@ const translations = {
         langTitle: 'Toggle language',
         themeToggleDark: 'Switch to dark mode',
         themeToggleLight: 'Switch to light mode',
+        projectsTitle: "Projects",
+        meuCofrinDesc: "A personal finance project developed to help with spending control and financial planning in a simple and intuitive way.",
+        meuCofrinLink: "Access site"
     }
 };
 
