@@ -41,7 +41,7 @@ const translations = {
     pt: {
         skipLink: 'Pular para o conteúdo principal',
         themeLabel: 'Tema',
-        heroTitle: 'Olá, eu sou <strong>Adler</strong> 👋',
+        heroTitle: 'Olá, eu sou <strong class="dark:text-[#4f46e5]">Adler</strong>',
         heroDesc: 'Desenvolvedor apaixonado por tecnologia, acessibilidade e boas práticas de desenvolvimento web.',
         aboutTitle: 'Sobre mim',
         aboutDesc: 'Sou um desenvolvedor com experiência em criar aplicações web modernas, performáticas e acessíveis. Acredito que a tecnologia deve ser inclusiva e que boas práticas de desenvolvimento fazem toda a diferença na experiência do usuário. Estou sempre em busca de aprender novas tecnologias e aprimorar minhas habilidades atuais.',
@@ -61,7 +61,7 @@ const translations = {
     en: {
         skipLink: 'Skip to main content',
         themeLabel: 'Theme',
-        heroTitle: 'Hi, I\'m <strong>Adler</strong> 👋',
+        heroTitle: 'Hi, I\'m <strong class="dark:text-[#4f46e5]">Adler</strong>',
         heroDesc: 'Developer passionate for technology, accessibility, and web development best practices.',
         aboutTitle: 'About me',
         aboutDesc: 'I\'m a developer experienced in building modern, performant, and accessible web applications. I believe technology should be inclusive and that good development practices make all the difference in user experience. I\'m always looking to learn new technologies to improve my current skills.',

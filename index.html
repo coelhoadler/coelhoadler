@@ -47,7 +47,7 @@
 </head>
 
 <body
-    class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans leading-relaxed transition-colors duration-300">
+    class="bg-white dark:bg-[#000002] text-gray-900 dark:text-gray-100 font-sans leading-relaxed transition-colors duration-300">
 
     <!-- Skip link para acessibilidade -->
     <a href="#main-content" data-i18n="skipLink"
@@ -56,7 +56,7 @@
     </a>
 
     <header role="banner"
-        class="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 sticky top-0 z-50 transition-colors duration-300">
+        class="bg-gray-50 dark:bg-[#000002] px-4 sm:px-6 lg:px-8 py-3 sm:py-4 sticky top-0 z-50 transition-colors duration-300">
         <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-2">
             <span class="text-lg sm:text-xl font-bold text-sky-600 dark:text-sky-400" aria-hidden="true">&lt;AC
                 /&gt;</span>
@@ -83,18 +83,6 @@
                     </button>
                 </div>
             </div>
-
-            <!-- <nav id="nav-menu" aria-label="Navegação principal"
-                class="hidden sm:block w-full sm:w-auto order-last sm:order-none">
-                <ul class="flex flex-col sm:flex-row gap-1 sm:gap-6 list-none text-sm sm:text-base py-2 sm:py-0">
-                    <li><a href="#sobre"
-                            class="block py-2 px-3 sm:p-0 rounded-lg sm:rounded-none hover:bg-gray-100 dark:hover:bg-gray-800 sm:hover:bg-transparent dark:sm:hover:bg-transparent text-sky-600 dark:text-sky-400 hover:text-sky-800 dark:hover:text-sky-300 hover:underline focus-visible:outline-2 focus-visible:outline-sky-600 focus-visible:outline-offset-2 transition-colors">Sobre</a>
-                    </li>
-                    <li><a href="#contato"
-                            class="block py-2 px-3 sm:p-0 rounded-lg sm:rounded-none hover:bg-gray-100 dark:hover:bg-gray-800 sm:hover:bg-transparent dark:sm:hover:bg-transparent text-sky-600 dark:text-sky-400 hover:text-sky-800 dark:hover:text-sky-300 hover:underline focus-visible:outline-2 focus-visible:outline-sky-600 focus-visible:outline-offset-2 transition-colors">Contato</a>
-                    </li>
-                </ul>
-            </nav> -->
         </div>
     </header>
 
@@ -104,8 +92,7 @@
         <section class="flex flex-col items-center text-center gap-4 sm:gap-6 py-8 sm:py-12"
             aria-labelledby="hero-title">
             <img id="profile-photo" src="assets/eu.jpg" alt="Foto de perfil de Adler pensando"
-                class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-sky-600 dark:border-sky-400 shadow-lg cursor-pointer"
-                width="160" height="160">
+                class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover  cursor-pointer" width="160" height="160">
             <h1 id="hero-title" class="text-2xl sm:text-3xl lg:text-4xl font-bold" data-i18n-html="heroTitle">
                 Olá, eu sou <strong>Adler</strong> 👋
             </h1>
@@ -115,7 +102,7 @@
             <ul class="flex flex-col sm:flex-row gap-3 list-none mt-2" aria-label="Redes sociais">
                 <li>
                     <a href="https://github.com/coelhoadler" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-sky-600 dark:text-sky-400 hover:bg-sky-50 dark:hover:bg-gray-800 hover:border-sky-600 dark:hover:border-sky-400 transition-colors focus-visible:outline-2 focus-visible:outline-sky-600 focus-visible:outline-offset-2"
+                        class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-sky-600 dark:text-white dark:hover:text-[#4f46e5] hover:bg-sky-50 dark:hover:bg-gray-800 hover:border-sky-600 dark:hover:border-[#4f46e5] transition-colors focus-visible:outline-2 focus-visible:outline-sky-600 focus-visible:outline-offset-2"
                         aria-label="GitHub de Adler Coelho (abre em nova aba)">
                         <div class="icon-computer"></div>
                         GitHub
@@ -123,7 +110,7 @@
                 </li>
                 <li>
                     <a href="https://www.linkedin.com/in/adlercoelhosantos/" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-sky-600 dark:text-sky-400 hover:bg-sky-50 dark:hover:bg-gray-800 hover:border-sky-600 dark:hover:border-sky-400 transition-colors focus-visible:outline-2 focus-visible:outline-sky-600 focus-visible:outline-offset-2"
+                        class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-sky-600 dark:text-white dark:hover:text-[#4f46e5] hover:bg-sky-50 dark:hover:bg-gray-800 hover:border-sky-600 dark:hover:border-[#4f46e5] transition-colors focus-visible:outline-2 focus-visible:outline-sky-600 focus-visible:outline-offset-2"
                         aria-label="LinkedIn de Adler Coelho (abre em nova aba)">
                         <div class="icon-handshake"></div>
                         LinkedIn
@@ -133,7 +120,7 @@
         </section>
 
         <!-- Sobre mim -->
-        <section id="sobre" class="mb-12" aria-labelledby="about-title">
+        <section id="sobre" aria-labelledby="about-title">
             <h2 id="about-title" data-i18n="aboutTitle"
                 class="text-xl sm:text-2xl font-bold mb-4 pb-2 border-b-2 border-sky-600 dark:border-sky-400 inline-block">
                 Sobre mim</h2>
@@ -298,7 +285,7 @@
                 <article
                     class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 flex flex-col">
                     <img src="./assets/projects/meu_cofrin.jpg" alt="Imagem do projeto Meu Cofrinho"
-                        class="w-full h-48 object-cover border-b border-gray-200 dark:border-gray-700">
+                        class="w-full h-48 object-cover border-b border-gray-200 dark:border-gray-700 glow-ring">
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-sky-600 dark:text-sky-400 font-bold text-xl mb-2">Meu Cofrin</h3>
                         <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow leading-relaxed"

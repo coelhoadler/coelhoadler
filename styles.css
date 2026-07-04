@@ -1,5 +1,26 @@
 /* Custom styles that complement Tailwind CSS */
 
+:root {
+    --color-glow-dim: rgba(2, 132, 199, 0.3);
+    /* sky-600 */
+    --color-glow: rgba(2, 132, 199, 0.6);
+}
+
+.dark {
+    --color-glow-dim: rgba(56, 189, 248, 0.3);
+    /* sky-400 */
+    --color-glow: rgba(56, 189, 248, 0.6);
+}
+
+#profile-photo {
+    box-shadow: 0 0 0 2px var(--color-glow-dim), 0 0 20px -4px var(--color-glow);
+    transition: box-shadow 0.3s ease;
+}
+
+#profile-photo:hover {
+    box-shadow: 0 0 0 2px var(--color-glow-dim), 0 0 30px -2px var(--color-glow);
+}
+
 /* Smooth transitions for theme switching on key elements */
 body,
 header,
