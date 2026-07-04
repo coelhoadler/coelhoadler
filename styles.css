@@ -1,5 +1,10 @@
 /* Custom styles that complement Tailwind CSS */
 
+h1, h2, h3, h4, h5, h6,
+code, pre {
+    font-family: "JetBrains Mono", monospace;
+}
+
 :root {
     --color-glow-dim: rgba(2, 132, 199, 0.3);
     /* sky-600 */

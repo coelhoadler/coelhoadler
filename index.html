@@ -36,10 +36,25 @@
     </script>
 
     <title>Adler Coelho | About me</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Work Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    }
+                }
+            }
         }
     </script>
     <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css" />
@@ -131,7 +146,7 @@
                 fazem toda a diferença na experiência do usuário. Estou sempre em busca de aprender
                 novas tecnologias e aprimorar minhas habilidades atuais.
             </p>
-            <div class="flex flex-wrap gap-3 mt-6" aria-label="Tecnologias">
+            <div class="flex flex-wrap gap-3 mt-6 mb-12" aria-label="Tecnologias">
                 <span
                     class="bg-[#18181b] border border-[#27272a] text-cyan-400 font-mono px-3 py-1.5 rounded-md text-sm shadow-sm transition-colors hover:border-gray-500 cursor-default">Angular</span>
                 <span
