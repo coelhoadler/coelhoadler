@@ -104,8 +104,7 @@
         </div>
     </header>
 
-    <main id="main-content" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
+    <main id="main-content" class="max-w-4xl mx-auto px-4 pb-0 sm:px-6 lg:px-8 py-8">
         <!-- Secao Hero -->
         <section class="flex flex-col items-center text-center gap-4 sm:gap-6 py-8 sm:py-12"
             aria-labelledby="hero-title">
@@ -307,15 +306,16 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                 <!-- Projeto: Meu Cofrinho -->
                 <article
-                    class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 flex flex-col">
-                    <img src="./assets/projects/meu_cofrin.jpg" alt="Imagem do projeto Meu Cofrinho"
-                        class="w-full h-48 object-cover border-b border-gray-200 dark:border-gray-700 glow-ring">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-primary dark:text-primary font-bold text-xl mb-2">Meu Cofrin</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow leading-relaxed"
+                    class="bg-white dark:bg-[#030712] border border-gray-200 dark:border-gray-800/60 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col group">
+                    <img src="assets/projects/project-cofrin.jpg" alt="Imagem do projeto Meu Cofrinho"
+                        class="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-white dark:bg-[#030712]">
+                        <h3 class="text-gray-900 dark:text-white font-mono font-bold text-2xl mb-1">Meu Cofrin</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-5" data-i18n="meuCofrinSubtitle"></p>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-6 flex-grow leading-relaxed"
                             data-i18n-html="meuCofrinDesc"></p>
                         <a href="https://meu-cofrin.app.br" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 text-primary dark:text-primary font-medium hover:text-sky-800 dark:hover:text-sky-300 hover:underline transition-colors focus-visible:outline-2 focus-visible:outline-sky-600 focus-visible:outline-offset-2 w-fit">
+                            class="inline-flex items-center gap-2 text-primary font-mono font-semibold hover:text-blue-700 dark:hover:text-blue-400 transition-colors w-fit">
                             <span data-i18n="meuCofrinLink"></span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">

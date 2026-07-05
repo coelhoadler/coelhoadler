@@ -54,6 +54,7 @@ const translations = {
         themeToggleDark: 'Alternar para modo escuro',
         themeToggleLight: 'Alternar para modo claro',
         projectsTitle: "Meus Projetos",
+        meuCofrinSubtitle: "Controle suas finanças com inteligência",
         meuCofrinDesc: "Um projeto de finanças pessoais desenvolvido para ajudar no controle de gastos e planejamento financeiro de forma simples e intuitiva.",
         meuCofrinLink: "Acessar site",
 
@@ -74,6 +75,7 @@ const translations = {
         themeToggleDark: 'Switch to dark mode',
         themeToggleLight: 'Switch to light mode',
         projectsTitle: "Projects",
+        meuCofrinSubtitle: "Smartly control your finances",
         meuCofrinDesc: "A personal finance project developed to help with spending control and financial planning in a simple and intuitive way.",
         meuCofrinLink: "Access site"
     }
