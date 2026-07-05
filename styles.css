@@ -1,7 +1,13 @@
 /* Custom styles that complement Tailwind CSS */
 
-h1, h2, h3, h4, h5, h6,
-code, pre {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+code,
+pre {
     font-family: "JetBrains Mono", monospace;
 }
 
@@ -33,4 +39,44 @@ footer {
     transition-property: background-color, border-color, color;
     transition-duration: 300ms;
     transition-timing-function: ease;
+}
+
+.efeito-escrita {
+    display: inline-block;
+    vertical-align: bottom;
+    white-space: nowrap;
+    /* Impede que o texto quebre de linha */
+    overflow: hidden;
+    /* Removido o border-right pois agora você está usando o <span>_</span> como cursor! */
+    width: 5ch;
+    /* Total de caracteres do seu texto (incluindo espaços) */
+    /* Agora a animação digitar roda sozinha aqui */
+    animation: digitar 3s steps(5) forwards;
+}
+
+.piscar {
+    display: inline-block;
+    /* Atualizado para a forma padrão de cursor piscante */
+    animation: piscar-cursor 1s step-end infinite;
+}
+
+/* Animação que revela o texto */
+@keyframes digitar {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 5ch;
+    }
+}
+
+/* Animação do cursor piscante (usando opacity para o caractere _) */
+@keyframes piscar-cursor {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }
