@@ -4,27 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio pessoal de Adler Coelho - Desenvolvedor">
+    <meta name="description"
+        content="Portfólio de Adler Coelho — Desenvolvedor Front-End Angular especialista em acessibilidade, Web Vitals e Clean Architecture.">
     <meta name="author" content="Adler Coelho">
     <link rel="icon" type="image/x-icon" href="ico.png">
     <link rel="apple-touch-icon" href="ico.png">
 
-    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Adler Coelho | Desenvolvedor">
+    <meta property="og:title" content="Adler Coelho | Senior Front-End Developer">
     <meta property="og:description"
-        content="Portfólio pessoal de Adler Coelho - Desenvolvedor apaixonado por tecnologia, acessibilidade e boas práticas de desenvolvimento web.">
-    <meta property="og:image" content="https://coelhoadler.github.io/coelhoadler/assets/perfil.jpg">
+        content="Portfólio de Adler Coelho — Desenvolvedor Front-End Angular especialista em acessibilidade, Web Vitals e Clean Architecture.">
+    <meta property="og:image" content="https://coelhoadler.github.io/coelhoadler/assets/perfil.png">
     <meta property="og:url" content="https://coelhoadler.github.io/coelhoadler/">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="Adler Coelho">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Adler Coelho | Desenvolvedor">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Adler Coelho | Senior Front-End Developer">
     <meta name="twitter:description"
-        content="Portfólio pessoal de Adler Coelho - Desenvolvedor apaixonado por tecnologia, acessibilidade e boas práticas.">
-    <meta name="twitter:image" content="https://coelhoadler.github.io/coelhoadler/assets/perfil.jpg">
+        content="Portfólio de Adler Coelho — Angular, TypeScript, Acessibilidade e Web Vitals.">
+    <meta name="twitter:image" content="https://coelhoadler.github.io/coelhoadler/assets/perfil.png">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-24SZCF31B0"></script>
@@ -35,14 +36,16 @@
         gtag('config', 'G-24SZCF31B0');
     </script>
 
-    <title>Adler Coelho | About me</title>
+    <title>Adler Coelho | Senior Front-End Developer</title>
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
         rel="stylesheet">
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -50,290 +53,626 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2e62ef',
+                        primary: '#3b82f6',
+                        accent: '#22d3ee',
                     },
                     fontFamily: {
-                        sans: ['"Work Sans"', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
                         mono: ['"JetBrains Mono"', 'monospace'],
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css" />
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body
-    class="bg-white dark:bg-[#000002] text-gray-900 dark:text-gray-100 font-sans leading-relaxed transition-colors duration-300">
+<body class="transition-colors duration-300">
 
-    <!-- Skip link para acessibilidade -->
+    <!-- Skip Link -->
     <a href="#main-content" data-i18n="skipLink"
-        class="absolute -top-full left-0 bg-sky-600 text-white px-4 py-2 z-[1000] font-semibold focus:top-0 transition-all">
+        class="absolute -top-full left-0 bg-blue-600 text-white px-4 py-2 z-[1000] font-semibold font-mono focus:top-0 transition-all rounded-br-lg">
         Pular para o conteúdo principal
     </a>
 
-    <header role="banner"
-        class="bg-gray-50 dark:bg-[#000002] px-4 sm:px-6 lg:px-8 py-3 sm:py-4 sticky top-0 z-50 transition-colors duration-300 font-mono">
-        <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-2">
-            <span class="text-lg sm:text-xl text-sky-600 dark:text-primary" aria-hidden="true">&lt;<span
-                    class="dark:text-[#fff] dark:hover:text-primary">AC</span>/&gt;</span>
+    <!-- ============================================================
+         HEADER / NAV
+         ============================================================ -->
+    <header role="banner" class="nav-glass sticky top-0 z-50 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto flex items-center justify-between h-16">
 
-            <!-- <button id="menu-toggle" type="button"
-                class="sm:hidden flex items-center justify-center w-10 h-10 rounded-lg border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:border-sky-600 dark:hover:border-sky-400 transition-colors focus-visible:outline-2 focus-visible:outline-sky-600 focus-visible:outline-offset-2"
-                aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
-                <span id="menu-icon" aria-hidden="true" class="text-xl leading-none">☰</span>
-            </button> -->
+            <!-- Logo -->
+            <a href="#" class="font-mono text-xl font-bold" aria-label="Adler Coelho — Início"
+                style="color: var(--accent);">
+                &lt;<span style="color: var(--text-primary);">AC</span>/&gt;
+            </a>
 
-            <div class="flex items-center gap-2 sm:gap-4 order-last sm:order-none">
-                <button id="theme-toggle" type="button"
-                    class="flex items-center gap-1.5 border-2 border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 text-sm cursor-pointer text-gray-900 dark:text-gray-100 bg-transparent hover:border-sky-600 dark:hover:border-sky-400 transition-colors focus-visible:outline-2 focus-visible:outline-sky-600 focus-visible:outline-offset-2"
-                    aria-label="Alternar modo escuro" title="Alternar entre modo claro e escuro">
-                    <span aria-hidden="true">🌙</span>
-                    <span class="hidden sm:inline text-sm font-medium" data-i18n="themeLabel">Tema</span>
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8" aria-label="Navegação principal">
+                <a href="#sobre" class="nav-link font-mono text-sm font-medium transition-colors hover:text-blue-400"
+                    style="color: var(--text-secondary);" data-i18n="navAbout">Sobre</a>
+                <a href="#projetos" class="nav-link font-mono text-sm font-medium transition-colors hover:text-blue-400"
+                    style="color: var(--text-secondary);" data-i18n="navProjects">Projetos</a>
+                <a href="#stack" class="nav-link font-mono text-sm font-medium transition-colors hover:text-blue-400"
+                    style="color: var(--text-secondary);" data-i18n="navStack">Stack</a>
+                <a href="#contato" class="nav-link font-mono text-sm font-medium transition-colors hover:text-blue-400"
+                    style="color: var(--text-secondary);" data-i18n="navContact">Contato</a>
+            </nav>
+
+            <!-- Controls -->
+            <div class="flex items-center gap-2">
+                <button id="lang-toggle" type="button"
+                    class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-mono font-medium border transition-colors"
+                    style="border-color: var(--border); color: var(--text-secondary); background: transparent;"
+                    aria-label="Selecionar idioma" title="Alternar idioma">
+                    <span aria-hidden="true">🇧🇷</span>
+                    <span class="hidden sm:inline">PT</span>
                 </button>
-                <div class="relative">
-                    <button id="lang-toggle" type="button"
-                        class="flex items-center gap-1.5 border-2 border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 text-sm cursor-pointer text-gray-900 dark:text-gray-100 bg-transparent hover:border-sky-600 dark:hover:border-sky-400 transition-colors focus-visible:outline-2 focus-visible:outline-sky-600 focus-visible:outline-offset-2"
-                        aria-label="Selecionar idioma" title="Alternar idioma">
-                        <span aria-hidden="true">🇧🇷</span>
-                        <span class="hidden sm:inline text-sm font-medium">PT</span>
-                    </button>
-                </div>
+
+                <button id="theme-toggle" type="button"
+                    class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-mono font-medium border transition-colors"
+                    style="border-color: var(--border); color: var(--text-secondary); background: transparent;"
+                    aria-label="Alternar tema" title="Alternar entre modo claro e escuro">
+                    <span aria-hidden="true" id="theme-icon">🌙</span>
+                    <span class="hidden sm:inline" data-i18n="themeLabel">Tema</span>
+                </button>
             </div>
         </div>
     </header>
 
-    <main id="main-content" class="max-w-4xl mx-auto px-4 pb-0 sm:px-6 lg:px-8 py-8">
-        <!-- Secao Hero -->
-        <section class="flex flex-col items-center text-center gap-4 sm:gap-6 py-8 sm:py-12"
-            aria-labelledby="hero-title">
-            <div class="relative inline-flex">
-                <img id="profile-photo" src="assets/eu.jpg" alt="Foto de perfil de Adler pensando"
-                    class="w-28 h-28 sm:w-40 sm:h-40 rounded-full object-cover cursor-pointer" width="160" height="160">
-                <div class="absolute bottom-1 right-1 sm:bottom-2 sm:right-2 bg-primary text-white font-mono font-bold text-sm sm:text-base w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border-4 border-white dark:border-[#000002] pointer-events-none select-none"
-                    aria-hidden="true">
-                    &lt;/&gt;
+    <!-- ============================================================
+         MAIN CONTENT
+         ============================================================ -->
+    <main id="main-content">
+
+        <!-- --------------------------------------------------------
+             HERO SECTION
+             -------------------------------------------------------- -->
+        <section aria-labelledby="hero-title" class="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+            <!-- Background orbs -->
+            <div class="hero-orb hero-orb-1 animate-orb-1" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb-2 animate-orb-2" aria-hidden="true"></div>
+
+            <div class="max-w-6xl mx-auto relative z-10">
+
+                <!-- ===== DESKTOP LAYOUT ===== -->
+                <div class="hidden lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+
+                    <!-- Left Column -->
+                    <div class="space-y-6 anim-fade-in">
+                        <!-- Availability Badge -->
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-sm font-mono anim-fade-in anim-delay-1"
+                            style="border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.08); color: #4ade80;">
+                            <span class="dot-available pulse-ring" aria-hidden="true"></span>
+                            <span data-i18n="availableBadge">On-line</span>
+                        </div>
+
+                        <!-- Title -->
+                        <h1 id="hero-title"
+                            class="text-4xl xl:text-5xl font-bold leading-tight anim-fade-in anim-delay-2"
+                            data-i18n-html="heroTitle">
+                            Olá, eu sou <strong class="efeito-escrita text-gradient">Adler</strong><span
+                                class="animate-blink" style="color: var(--accent);">_</span>
+                        </h1>
+
+                        <!-- Subtitle -->
+                        <p class="text-lg leading-relaxed anim-fade-in anim-delay-3"
+                            style="color: var(--text-secondary);" data-i18n="heroDesc">
+                            Desenvolvedor apaixonado por tecnologia, acessibilidade e boas práticas de desenvolvimento
+                            web.
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-wrap gap-3 anim-fade-in anim-delay-4">
+                            <a href="https://github.com/coelhoadler" target="_blank" rel="noopener noreferrer"
+                                class="btn-primary btn-sheen" aria-label="GitHub de Adler Coelho (abre em nova aba)">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/adlercoelhosantos/" target="_blank"
+                                rel="noopener noreferrer" class="btn-outline"
+                                aria-label="LinkedIn de Adler Coelho (abre em nova aba)">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                                LinkedIn
+                            </a>
+                            <a href="mailto:adlercoelhosantos12@gmail.com" class="btn-outline"
+                                aria-label="Enviar e-mail para Adler">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <span data-i18n="contactBtnLabel">Contato</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Terminal/IDE Window -->
+                    <div class="relative anim-fade-in anim-delay-3">
+                        <!-- Floating Badge: Angular Expert -->
+                        <div class="animate-float-1 absolute -top-4 -left-6 z-20 badge badge-blue shadow-lg"
+                            aria-label="Angular Expert">
+                            ⚡ Angular Expert
+                        </div>
+                        <!-- Floating Badge: WCAG -->
+                        <div class="animate-float-2 absolute -bottom-4 -right-4 z-20 badge badge-green shadow-lg"
+                            aria-label="100% WCAG A11y">
+                            ♿ 100% WCAG A11y
+                        </div>
+
+                        <!-- Terminal Window -->
+                        <div class="terminal-window" role="img"
+                            aria-label="Terminal mostrando comandos de desenvolvimento">
+                            <div class="terminal-bar">
+                                <span class="terminal-dot dot-red" aria-hidden="true"></span>
+                                <span class="terminal-dot dot-yellow" aria-hidden="true"></span>
+                                <span class="terminal-dot dot-green" aria-hidden="true"></span>
+                                <span class="ml-3 text-xs font-mono" style="color: #6e7681;">~/adler-coelho — zsh</span>
+                            </div>
+                            <div class="terminal-body">
+                                <p><span class="terminal-prompt">$ </span><span class="terminal-cmd">whoami</span></p>
+                                <p class="terminal-output">Senior Front-End Developer</p>
+                                <br>
+                                <p><span class="terminal-prompt">$ </span><span class="terminal-cmd">cat
+                                        skills.json</span></p>
+                                <p class="terminal-success">&#123;</p>
+                                <p class="terminal-output">&nbsp; "framework": <span
+                                        style="color:#79c0ff;">"Angular"</span>,</p>
+                                <p class="terminal-output">&nbsp; "language": <span
+                                        style="color:#79c0ff;">"TypeScript"</span>,</p>
+                                <p class="terminal-output">&nbsp; "a11y": <span style="color:#56d364;">"WCAG 2.1
+                                        AA/AAA"</span>,</p>
+                                <p class="terminal-output">&nbsp; "arch": <span style="color:#79c0ff;">"Clean +
+                                        Signals"</span></p>
+                                <p class="terminal-success">&#125;</p>
+                                <br>
+                                <p><span class="terminal-prompt">$ </span><span class="terminal-cmd">npx
+                                        create-accessible-app --angular</span></p>
+                                <p class="terminal-success">✓ Project ready! Building something amazing...</p>
+                                <p class="terminal-comment"># Standalone · Signals · Storybook · PWA</p>
+                                <p><span class="terminal-prompt">$ </span><span class="terminal-cursor animate-blink"
+                                        style="color:#22d3ee;">▌</span></p>
+                            </div>
+
+                            <!-- Profile card inside terminal -->
+                            <div class="flex items-center gap-4 px-5 pb-5 pt-2 border-t"
+                                style="border-color: rgba(255,255,255,0.06);">
+                                <img id="profile-photo" src="assets/perfil.png"
+                                    alt="Foto de Adler Coelho sorrindo com os braços cruzados"
+                                    class="w-14 h-14 rounded-full object-cover profile-glow cursor-pointer flex-shrink-0"
+                                    width="56" height="56">
+                                <div>
+                                    <p class="font-mono font-bold text-sm" style="color: #e6edf3;">Adler Coelho</p>
+                                    <p class="font-mono text-xs" style="color: #22d3ee;">&lt;/&gt; Senior Front-End</p>
+                                    <div class="flex gap-2 mt-1">
+                                        <span class="badge badge-cyan"
+                                            style="font-size:0.6rem; padding: 2px 6px;">Standalone</span>
+                                        <span class="badge badge-purple"
+                                            style="font-size:0.6rem; padding: 2px 6px;">Signals</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <h1 id="hero-title" class="text-2xl sm:text-3xl lg:text-4xl font-bold" data-i18n-html="heroTitle">
-                Olá, eu sou <strong class="efeito-escrita">Adler</strong>
-            </h1>
-            <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-xl" data-i18n="heroDesc">
-                Desenvolvedor apaixonado por tecnologia, acessibilidade e boas práticas de desenvolvimento web.
-            </p>
-            <ul class="flex flex-col sm:flex-row gap-3 list-none mt-2" aria-label="Redes sociais">
-                <li>
-                    <a href="https://github.com/coelhoadler" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-sky-600 dark:text-white dark:hover:text-primary hover:bg-sky-50 dark:hover:bg-gray-800 hover:border-sky-600 dark:hover:border-primary transition-colors focus-visible:outline-2 focus-visible:outline-sky-600 focus-visible:outline-offset-2"
-                        aria-label="GitHub de Adler Coelho (abre em nova aba)">
-                        <div class="icon-computer"></div>
-                        GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/adlercoelhosantos/" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-sky-600 dark:text-white dark:hover:text-primary hover:bg-sky-50 dark:hover:bg-gray-800 hover:border-sky-600 dark:hover:border-primary transition-colors focus-visible:outline-2 focus-visible:outline-sky-600 focus-visible:outline-offset-2"
-                        aria-label="LinkedIn de Adler Coelho (abre em nova aba)">
-                        <div class="icon-handshake"></div>
-                        LinkedIn
-                    </a>
-                </li>
-            </ul>
-        </section>
 
-        <!-- Sobre mim -->
-        <section id="sobre" aria-labelledby="about-title">
-            <h2 id="about-title" data-i18n="aboutTitle"
-                class="text-xl sm:text-2xl font-bold mb-4 pb-2 border-b-2 border-sky-600 dark:border-primary inline-block">
-                Sobre mim</h2>
-            <p class="text-gray-600 dark:text-gray-400 max-w-2xl text-base sm:text-lg leading-relaxed"
-                data-i18n="aboutDesc">
-                Sou um desenvolvedor com experiência em criar aplicações web modernas, performáticas e acessíveis.
-                Acredito que a tecnologia deve ser inclusiva e que boas práticas de desenvolvimento
-                fazem toda a diferença na experiência do usuário. Estou sempre em busca de aprender
-                novas tecnologias e aprimorar minhas habilidades atuais.
-            </p>
-            <div class="flex flex-wrap gap-3 mt-6 mb-12" aria-label="Tecnologias">
-                <span
-                    class="bg-[#18181b] border border-[#27272a] text-cyan-400 font-mono px-3 py-1.5 rounded-md text-sm shadow-sm transition-colors hover:border-gray-500 cursor-default">Angular</span>
-                <span
-                    class="bg-[#18181b] border border-[#27272a] text-orange-400 font-mono px-3 py-1.5 rounded-md text-sm shadow-sm transition-colors hover:border-gray-500 cursor-default">TypeScript</span>
-                <span
-                    class="bg-[#18181b] border border-[#27272a] text-gray-200 font-mono px-3 py-1.5 rounded-md text-sm shadow-sm transition-colors hover:border-gray-500 cursor-default">Web
-                    development</span>
-                <span
-                    class="bg-[#18181b] border border-[#27272a] text-orange-400 font-mono px-3 py-1.5 rounded-md text-sm shadow-sm transition-colors hover:border-gray-500 cursor-default">Performance</span>
-                <span
-                    class="bg-[#18181b] border border-[#27272a] text-gray-200 font-mono px-3 py-1.5 rounded-md text-sm shadow-sm transition-colors hover:border-gray-500 cursor-default">AI
-                    Tools</span>
-            </div>
-        </section>
-
-        <!-- Habilidades -->
-        <!-- <section id="habilidades" class="mb-12" aria-labelledby="skills-title">
-            <h2 id="skills-title"
-                class="text-xl sm:text-2xl font-bold mb-4 pb-2 border-b-2 border-sky-600 dark:border-sky-400 inline-block">
-                Habilidades</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-4">
-
-                <article
-                    class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200">
-                    <h3 class="text-sky-600 dark:text-sky-400 font-semibold text-lg mb-2">Front-end</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">Criação de interfaces responsivas e acessíveis
-                        com foco na experiência do usuário.</p>
-                    <div class="flex flex-wrap gap-2 mt-3" aria-label="Tecnologias front-end">
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">HTML5</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">CSS3</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">JavaScript</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">TypeScript</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">Angular</span>
+                <!-- ===== MOBILE LAYOUT ===== -->
+                <div class="lg:hidden flex flex-col items-center text-center gap-6">
+                    <!-- Status Badge -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-sm font-mono anim-fade-in"
+                        style="border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.08); color: #4ade80;">
+                        <span class="dot-available pulse-ring" aria-hidden="true"></span>
+                        <span data-i18n="availableBadge">On-line</span>
                     </div>
-                </article>
 
-                <article
-                    class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200">
-                    <h3 class="text-sky-600 dark:text-sky-400 font-semibold text-lg mb-2">Back-end</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">Desenvolvimento de APIs robustas e escaláveis
-                        para aplicações modernas.</p>
-                    <div class="flex flex-wrap gap-2 mt-3" aria-label="Tecnologias back-end">
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">Node.js</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">C#</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">.NET</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">REST
-                            APIs</span>
+                    <!-- Avatar -->
+                    <div class="relative inline-block anim-fade-in anim-delay-1">
+                        <div class="w-28 h-28 rounded-full p-[3px]"
+                            style="background: linear-gradient(135deg, var(--accent), var(--cyan));">
+                            <img id="profile-photo-mobile" src="assets/perfil.png" alt="Foto de Adler Coelho"
+                                class="w-full h-full rounded-full object-cover cursor-pointer" width="112" height="112">
+                        </div>
+                        <div class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center font-mono font-bold text-xs text-white"
+                            style="background: var(--accent);" aria-hidden="true">
+                            &lt;/&gt;
+                        </div>
                     </div>
-                </article>
 
-                <article
-                    class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200">
-                    <h3 class="text-sky-600 dark:text-sky-400 font-semibold text-lg mb-2">Banco de Dados</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">Modelagem e gerenciamento de dados com bancos
-                        relacionais e não-relacionais.</p>
-                    <div class="flex flex-wrap gap-2 mt-3" aria-label="Tecnologias de banco de dados">
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">SQL
-                            Server</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">PostgreSQL</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">MongoDB</span>
-                    </div>
-                </article>
+                    <!-- Title -->
+                    <h1 id="hero-title" class="text-3xl font-bold leading-tight anim-fade-in anim-delay-2"
+                        data-i18n-html="heroTitle">
+                        Olá, eu sou <strong class="efeito-escrita text-gradient">Adler</strong><span
+                            class="animate-blink" style="color: var(--accent);">_</span>
+                    </h1>
 
-                <article
-                    class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200">
-                    <h3 class="text-sky-600 dark:text-sky-400 font-semibold text-lg mb-2">DevOps &amp; Ferramentas</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">Automação de deploys, controle de versão e
-                        integração contínua.</p>
-                    <div class="flex flex-wrap gap-2 mt-3" aria-label="Ferramentas DevOps">
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">Git</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">Docker</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">CI/CD</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">Azure</span>
-                    </div>
-                </article>
+                    <!-- Desc -->
+                    <p class="text-base leading-relaxed max-w-xs anim-fade-in anim-delay-3"
+                        style="color: var(--text-secondary);" data-i18n="heroDesc">
+                        Desenvolvedor apaixonado por tecnologia, acessibilidade e boas práticas de desenvolvimento web.
+                    </p>
 
-                <article
-                    class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200">
-                    <h3 class="text-sky-600 dark:text-sky-400 font-semibold text-lg mb-2">Acessibilidade</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">Garantir que todos possam usar a web, seguindo
-                        as diretrizes WCAG.</p>
-                    <div class="flex flex-wrap gap-2 mt-3" aria-label="Acessibilidade">
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">WCAG
-                            2.1</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">ARIA</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">HTML
-                            Semântico</span>
-                    </div>
-                </article>
-
-                <article
-                    class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200">
-                    <h3 class="text-sky-600 dark:text-sky-400 font-semibold text-lg mb-2">Soft Skills</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">Colaboração, comunicação e resolução de
-                        problemas em equipe.</p>
-                    <div class="flex flex-wrap gap-2 mt-3" aria-label="Soft skills">
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">Trabalho
-                            em equipe</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">Comunicação</span>
-                        <span
-                            class="bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 px-2.5 py-0.5 rounded-full text-xs font-semibold">Proatividade</span>
-                    </div>
-                </article>
-
-            </div>
-        </section> -->
-
-        <!-- Contato -->
-        <section id="contato" class="mb-12" aria-labelledby="contact-title">
-            <h2 id="contact-title" data-i18n="contactTitle"
-                class="text-xl sm:text-2xl font-bold mb-4 pb-2 border-b-2 border-sky-600 dark:border-primary inline-block">
-                Contato</h2>
-            <p class="text-gray-600 dark:text-gray-400 max-w-2xl text-base sm:text-lg leading-relaxed"
-                data-i18n-html="contactDesc">
-                Quer trocar uma ideia ou trabalhar junto? Entre em contato comigo pelo
-                <a href="mailto:adlercoelhosantos12@gmail.com"
-                    class="text-primary dark:text-primary hover:underline font-medium">e-mail</a>
-                ou pelas redes sociais acima.
-                Estou sempre aberto a novas oportunidades e colaborações!
-            </p>
-        </section>
-
-        <!-- Meus Projetos -->
-        <section id="projetos" class="mb-12" aria-labelledby="projects-title">
-            <h2 id="projects-title" data-i18n="projectsTitle"
-                class="text-xl sm:text-2xl font-bold mb-4 pb-2 border-b-2 border-sky-600 dark:border-primary inline-block">
-                Meus Projetos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                <!-- Projeto: Meu Cofrinho -->
-                <article
-                    class="bg-white dark:bg-[#030712] border border-gray-200 dark:border-gray-800/60 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col group">
-                    <img src="assets/projects/project-cofrin.jpg" alt="Imagem do projeto Meu Cofrinho"
-                        class="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-500">
-                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-white dark:bg-[#030712]">
-                        <h3 class="text-gray-900 dark:text-white font-mono font-bold text-2xl mb-1">Meu Cofrin</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-5" data-i18n="meuCofrinSubtitle"></p>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-6 flex-grow leading-relaxed"
-                            data-i18n-html="meuCofrinDesc"></p>
-                        <a href="https://meu-cofrin.app.br" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 text-primary font-mono font-semibold hover:text-blue-700 dark:hover:text-blue-400 transition-colors w-fit">
-                            <span data-i18n="meuCofrinLink"></span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    <!-- Quick action buttons -->
+                    <div class="flex flex-wrap justify-center gap-3 anim-fade-in anim-delay-4">
+                        <a href="https://github.com/coelhoadler" target="_blank" rel="noopener noreferrer"
+                            class="btn-primary" aria-label="GitHub">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                             </svg>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/adlercoelhosantos/" target="_blank"
+                            rel="noopener noreferrer" class="btn-outline" aria-label="LinkedIn">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="mailto:adlercoelhosantos12@gmail.com" class="btn-outline" aria-label="E-mail">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            Email
                         </a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- --------------------------------------------------------
+             SOBRE MIM
+             -------------------------------------------------------- -->
+        <section id="sobre" aria-labelledby="about-title" class="px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+            <div class="max-w-6xl mx-auto">
+                <h2 id="about-title" class="section-title" data-i18n="aboutTitle">Sobre mim</h2>
+
+                <div class="grid lg:grid-cols-5 gap-10">
+                    <!-- Desc -->
+                    <div class="lg:col-span-3 space-y-6">
+                        <p class="text-base lg:text-lg leading-relaxed" style="color: var(--text-secondary);"
+                            data-i18n="aboutDesc">
+                            Sou um desenvolvedor com experiência em criar aplicações web modernas, performáticas e
+                            acessíveis.
+                            Acredito que a tecnologia deve ser inclusiva e que boas práticas de desenvolvimento
+                            fazem toda a diferença na experiência do usuário. Estou sempre em busca de aprender
+                            novas tecnologias e aprimorar minhas habilidades atuais.
+                        </p>
+
+                        <!-- Engineering checklist -->
+                        <ul class="space-y-2" aria-label="Diferenciais de engenharia">
+                            <li class="flex items-center gap-2 text-sm font-mono" style="color: var(--text-secondary);">
+                                <span class="text-green-400" aria-hidden="true">✓</span>
+                                Storybook &amp; Component-Driven Development
+                            </li>
+                            <li class="flex items-center gap-2 text-sm font-mono" style="color: var(--text-secondary);">
+                                <span class="text-green-400" aria-hidden="true">✓</span>
+                                HTML Semântico &amp; ARIA
+                            </li>
+                            <li class="flex items-center gap-2 text-sm font-mono" style="color: var(--text-secondary);">
+                                <span class="text-green-400" aria-hidden="true">✓</span>
+                                Testes Unitários (Jest / Karma)
+                            </li>
+                            <li class="flex items-center gap-2 text-sm font-mono" style="color: var(--text-secondary);">
+                                <span class="text-green-400" aria-hidden="true">✓</span>
+                                Clean Architecture &amp; Angular Signals
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Metric Cards -->
+                    <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
+                        <div class="metric-card">
+                            <div class="text-2xl font-mono font-bold text-gradient">100%</div>
+                            <div class="text-sm font-mono mt-1" style="color: var(--text-secondary);"
+                                data-i18n="metricA11y">Acessibilidade WCAG</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="text-2xl font-mono font-bold text-gradient">⚡ LCP</div>
+                            <div class="text-sm font-mono mt-1" style="color: var(--text-secondary);"
+                                data-i18n="metricVitals">Web Vitals (LCP/FID/CLS)</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="text-2xl font-mono font-bold text-gradient">A+</div>
+                            <div class="text-sm font-mono mt-1" style="color: var(--text-secondary);"
+                                data-i18n="metricCode">Clean Code</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- --------------------------------------------------------
+             STACK & HABILIDADES
+             -------------------------------------------------------- -->
+        <section id="stack" aria-labelledby="stack-title" class="px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+            <div class="max-w-6xl mx-auto">
+                <h2 id="stack-title" class="section-title" data-i18n="stackTitle">Stack &amp; Habilidades</h2>
+
+                <div class="flex flex-wrap gap-3" role="list" aria-label="Tecnologias e habilidades">
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#dd1b16;" aria-hidden="true">▲</span> Angular
+                    </span>
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#3178c6;" aria-hidden="true">TS</span> TypeScript
+                    </span>
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#f7df1e;" aria-hidden="true">JS</span> JavaScript
+                    </span>
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#e34c26;" aria-hidden="true">&lt;/&gt;</span> HTML5
+                    </span>
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#264de4;" aria-hidden="true">✦</span> CSS3
+                    </span>
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#61dafb;" aria-hidden="true">⚛</span> RxJS
+                    </span>
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#22c55e;" aria-hidden="true">♿</span> Acessibilidade WCAG
+                    </span>
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#f59e0b;" aria-hidden="true">⚡</span> Performance &amp; Web Vitals
+                    </span>
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#8b5cf6;" aria-hidden="true">🤖</span> AI Tools
+                    </span>
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#24292f;" aria-hidden="true">⎇</span> Git
+                    </span>
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#68a063;" aria-hidden="true">⬡</span> Node.js
+                    </span>
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#cb3837;" aria-hidden="true">📦</span> PWA
+                    </span>
+                    <span class="skill-chip" role="listitem">
+                        <span style="color:#ff6b6b;" aria-hidden="true">🔥</span> Firebase
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- --------------------------------------------------------
+             MEUS PROJETOS
+             -------------------------------------------------------- -->
+        <section id="projetos" aria-labelledby="projects-title" class="px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+            <div class="max-w-6xl mx-auto">
+                <h2 id="projects-title" class="section-title" data-i18n="projectsTitle">Meus Projetos</h2>
+
+                <!-- Meu Cofrin Card -->
+                <article class="project-card" aria-labelledby="project-cofrin-title">
+                    <div class="grid lg:grid-cols-2 gap-0">
+
+                        <!-- Preview Column -->
+                        <div class="relative overflow-hidden"
+                            style="background: linear-gradient(135deg, #060d1f 0%, #0f1b3d 50%, #0c1527 100%); min-height: 340px;">
+                            <!-- Main project image -->
+                            <img src="assets/projects/project-cofrin.jpg"
+                                alt="Cofrinho digital neon — ilustração do app Meu Cofrin"
+                                class="absolute inset-0 w-full h-full object-cover object-center opacity-90" width="600"
+                                height="400">
+
+                            <!-- Overlay gradient -->
+                            <div class="absolute inset-0"
+                                style="background: linear-gradient(to right, transparent 60%, var(--bg-card) 100%);">
+                            </div>
+
+                            <!-- Floating mini-dashboard overlay -->
+                            <div class="absolute top-4 right-4 w-44 dashboard-mini shadow-2xl z-10" aria-hidden="true">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span style="color:#94a3b8; font-size:0.6rem;">SALDO</span>
+                                    <span class="badge badge-green" style="font-size:0.55rem; padding:1px 5px;">●
+                                        Ativo</span>
+                                </div>
+                                <div style="color:#4ade80; font-size:1rem; font-weight:700;" class="mb-3">R$ 2.847,50
+                                </div>
+                                <!-- Mini chart SVG -->
+                                <svg viewBox="0 0 120 36" class="w-full h-8 mb-2" aria-hidden="true" role="img">
+                                    <defs>
+                                        <linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.4" />
+                                            <stop offset="100%" stop-color="#22d3ee" stop-opacity="0" />
+                                        </linearGradient>
+                                    </defs>
+                                    <polyline class="mini-chart-line"
+                                        points="0,28 20,22 40,26 60,14 80,18 100,8 120,4" />
+                                    <polygon class="mini-chart-area"
+                                        points="0,28 20,22 40,26 60,14 80,18 100,8 120,4 120,36 0,36" />
+                                </svg>
+                                <div class="flex justify-between" style="font-size:0.6rem; color:#64748b;">
+                                    <span>Jan</span><span>Fev</span><span>Mar</span><span>Abr</span>
+                                </div>
+                            </div>
+
+                            <!-- FINTECH APP badge -->
+                            <div class="absolute bottom-4 left-4 z-10">
+                                <span class="badge badge-cyan" style="font-size:0.7rem; padding: 4px 10px;">FINTECH
+                                    APP</span>
+                            </div>
+                        </div>
+
+                        <!-- Details Column -->
+                        <div class="p-8 lg:p-10 flex flex-col justify-between">
+                            <div>
+                                <!-- Badges -->
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="badge badge-cyan">FINTECH APP</span>
+                                    <span class="badge badge-green">
+                                        <span class="dot-available pulse-ring" aria-hidden="true"></span>
+                                        <span data-i18n="projectStatus">Ativo / Em produção</span>
+                                    </span>
+                                </div>
+
+                                <!-- Title -->
+                                <h3 id="project-cofrin-title" class="text-2xl font-mono font-bold mb-1"
+                                    style="color: var(--text-primary);">
+                                    Meu Cofrin
+                                </h3>
+                                <p class="text-sm mb-4" style="color: var(--text-secondary);"
+                                    data-i18n="meuCofrinSubtitle">
+                                    Controle suas finanças com inteligência
+                                </p>
+
+                                <!-- Description -->
+                                <p class="text-sm leading-relaxed mb-6" style="color: var(--text-secondary);"
+                                    data-i18n="meuCofrinDesc">
+                                    Um projeto de finanças pessoais desenvolvido para ajudar no controle de gastos e
+                                    planejamento financeiro de forma simples e intuitiva.
+                                </p>
+
+                                <!-- Stack chips -->
+                                <div class="flex flex-wrap gap-2 mb-6" aria-label="Tecnologias do projeto">
+                                    <span class="stack-chip">Angular</span>
+                                    <span class="stack-chip">TypeScript</span>
+                                    <span class="stack-chip">PWA</span>
+                                    <span class="stack-chip">Charts.js</span>
+                                    <span class="stack-chip">Firebase</span>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="flex flex-wrap gap-3">
+                                <a href="https://meu-cofrin.app.br" target="_blank" rel="noopener noreferrer"
+                                    class="btn-primary btn-sheen"
+                                    aria-label="Acessar o site do Meu Cofrin (abre em nova aba)">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                    <span data-i18n="meuCofrinLink">Acessar site</span>
+                                </a>
+                                <a href="https://github.com/coelhoadler/meu-cofrin" target="_blank"
+                                    rel="noopener noreferrer" class="btn-outline"
+                                    aria-label="Ver código do Meu Cofrin no GitHub (abre em nova aba)">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                    <span data-i18n="githubBtn">Ver código</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </article>
             </div>
         </section>
+
+        <div class="section-divider"></div>
+
+        <!-- --------------------------------------------------------
+             CONTATO
+             -------------------------------------------------------- -->
+        <section id="contato" aria-labelledby="contact-title" class="px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+            <div class="max-w-6xl mx-auto">
+                <h2 id="contact-title" class="section-title" data-i18n="contactTitle">Contato</h2>
+
+                <div class="contact-card p-8 sm:p-10 lg:p-14" role="region" aria-label="Seção de contato">
+                    <!-- Decorative circles -->
+                    <div class="absolute top-0 right-0 w-64 h-64 rounded-full opacity-20 pointer-events-none"
+                        style="background: rgba(255,255,255,0.3); transform: translate(30%, -30%);" aria-hidden="true">
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full opacity-20 pointer-events-none"
+                        style="background: rgba(255,255,255,0.2); transform: translate(-30%, 30%);" aria-hidden="true">
+                    </div>
+
+                    <div class="relative z-10 text-center text-white max-w-2xl mx-auto">
+                        <div class="text-5xl mb-4" aria-hidden="true">✉️</div>
+                        <h3 class="text-2xl lg:text-3xl font-mono font-bold mb-3" data-i18n="contactCTA">
+                            Vamos construir algo juntos?
+                        </h3>
+                        <p class="text-white/80 mb-8 text-base leading-relaxed" data-i18n="contactSubtitle">
+                            Estou disponível para novos projetos, oportunidades e colaborações. Me chama!
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <a href="mailto:adlercoelhosantos12@gmail.com"
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 font-mono font-bold rounded-xl hover:bg-blue-50 transition-colors shadow-lg"
+                                aria-label="Enviar mensagem por e-mail para adlercoelhosantos12@gmail.com">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <span data-i18n="sendEmailBtn">Enviar mensagem</span>
+                            </a>
+                            <button id="copy-email-btn" type="button"
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/30 text-white font-mono font-bold rounded-xl hover:bg-white/20 transition-colors backdrop-blur-sm"
+                                aria-label="Copiar endereço de e-mail para área de transferência">
+                                <svg id="copy-email-icon" class="w-4 h-4" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                                </svg>
+                                <span id="copy-email-label" data-i18n="copyEmailBtn">Copiar e-mail</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer role="contentinfo"
-        class="text-center py-8 px-4 border-t border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 text-sm mt-8 transition-colors duration-300">
-        <p>&copy; <span id="year"></span> Adler Coelho. <span data-i18n="footerText">Feito com HTML semântico e
-                acessível.</span></p>
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer role="contentinfo" class="text-center py-10 px-4 border-t text-sm"
+        style="border-color: var(--border); color: var(--text-muted);">
+        <p class="font-mono">
+            &copy; <span id="year"></span> Adler Coelho.
+            <span data-i18n="footerText">Feito com HTML semântico e acessível.</span>
+        </p>
+        <div class="flex justify-center gap-4 mt-3">
+            <a href="https://github.com/coelhoadler" target="_blank" rel="noopener noreferrer"
+                class="hover:text-blue-400 transition-colors font-mono" style="color: var(--text-muted);"
+                aria-label="GitHub (abre em nova aba)">GitHub</a>
+            <span aria-hidden="true">·</span>
+            <a href="https://www.linkedin.com/in/adlercoelhosantos/" target="_blank" rel="noopener noreferrer"
+                class="hover:text-blue-400 transition-colors font-mono" style="color: var(--text-muted);"
+                aria-label="LinkedIn (abre em nova aba)">LinkedIn</a>
+            <span aria-hidden="true">·</span>
+            <a href="mailto:adlercoelhosantos12@gmail.com" class="hover:text-blue-400 transition-colors font-mono"
+                style="color: var(--text-muted);" aria-label="E-mail">E-mail</a>
+        </div>
     </footer>
+
+    <!-- ============================================================
+         BOTTOM NAVIGATION (Mobile only)
+         ============================================================ -->
+    <nav class="bottom-nav lg:hidden" aria-label="Navegação mobile">
+        <a href="#sobre" class="bottom-nav-item" id="bn-sobre" data-section="sobre" aria-label="Sobre">
+            <span class="bottom-nav-icon" aria-hidden="true">👤</span>
+            <span data-i18n="navAbout">Sobre</span>
+        </a>
+        <a href="#projetos" class="bottom-nav-item" id="bn-projetos" data-section="projetos" aria-label="Projetos">
+            <span class="bottom-nav-icon" aria-hidden="true">🚀</span>
+            <span data-i18n="navProjects">Projetos</span>
+        </a>
+        <a href="#stack" class="bottom-nav-item" id="bn-stack" data-section="stack" aria-label="Stack">
+            <span class="bottom-nav-icon" aria-hidden="true">⚡</span>
+            <span data-i18n="navStack">Stack</span>
+        </a>
+        <a href="#contato" class="bottom-nav-item" id="bn-contato" data-section="contato" aria-label="Contato">
+            <span class="bottom-nav-icon" aria-hidden="true">✉️</span>
+            <span data-i18n="navContact">Contato</span>
+        </a>
+    </nav>
 
     <script src="script.js"></script>
 </body>

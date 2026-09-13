@@ -1,15 +1,19 @@
-// Ano dinâmico
+/* ==============================================
+   Portfólio Adler Coelho — script.js
+   ============================================== */
+
+// ── Ano dinâmico ──────────────────────────────────
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Toggle de tema com persistência
+// ── Toggle de tema com persistência ───────────────
 const themeToggle = document.getElementById('theme-toggle');
-const icon = themeToggle.querySelector('span[aria-hidden]');
+const themeIcon = document.getElementById('theme-icon');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
 function setTheme(dark) {
     document.documentElement.classList.toggle('dark', dark);
-    icon.textContent = dark ? '☀️' : '🌙';
-    themeToggle.setAttribute('aria-label',
+    if (themeIcon) themeIcon.textContent = dark ? '☀️' : '🌙';
+    themeToggle?.setAttribute('aria-label',
         dark ? 'Alternar para modo claro' : 'Alternar para modo escuro'
     );
     localStorage.setItem('theme', dark ? 'dark' : 'light');
@@ -23,67 +27,91 @@ if (savedTheme) {
     setTheme(prefersDark.matches);
 }
 
-// Evento de clique
-themeToggle.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.contains('dark');
-    setTheme(!isDark);
+themeToggle?.addEventListener('click', () => {
+    setTheme(!document.documentElement.classList.contains('dark'));
 });
 
-// Ouvir mudanças de preferência do sistema
 prefersDark.addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-        setTheme(e.matches);
-    }
+    if (!localStorage.getItem('theme')) setTheme(e.matches);
 });
 
-// ========== Internacionalização (i18n) ==========
+// ── i18n ──────────────────────────────────────────
 const translations = {
     pt: {
         skipLink: 'Pular para o conteúdo principal',
         themeLabel: 'Tema',
-        heroTitle: 'Olá, eu sou <strong class="dark:text-primary efeito-escrita font-mono">Adler</strong><span class="piscar dark:text-primary">_</span>',
+        navAbout: 'Sobre',
+        navProjects: 'Projetos',
+        navStack: 'Stack',
+        navContact: 'Contato',
+        availableBadge: 'On-line',
+        heroTitle: 'Olá, eu sou <strong class="efeito-escrita text-gradient font-mono">Adler</strong><span class="animate-blink" style="color: var(--accent);">_</span>',
         heroDesc: 'Desenvolvedor apaixonado por tecnologia, acessibilidade e boas práticas de desenvolvimento web.',
+        contactBtnLabel: 'Contato',
         aboutTitle: 'Sobre mim',
         aboutDesc: 'Sou um desenvolvedor com experiência em criar aplicações web modernas, performáticas e acessíveis. Acredito que a tecnologia deve ser inclusiva e que boas práticas de desenvolvimento fazem toda a diferença na experiência do usuário. Estou sempre em busca de aprender novas tecnologias e aprimorar minhas habilidades atuais.',
+        metricA11y: 'Acessibilidade WCAG',
+        metricVitals: 'Web Vitals (LCP/FID/CLS)',
+        metricCode: 'Clean Code',
+        stackTitle: 'Stack & Habilidades',
+        projectsTitle: 'Meus Projetos',
+        projectStatus: 'Ativo / Em produção',
+        meuCofrinSubtitle: 'Controle suas finanças com inteligência',
+        meuCofrinDesc: 'Um projeto de finanças pessoais desenvolvido para ajudar no controle de gastos e planejamento financeiro de forma simples e intuitiva.',
+        meuCofrinLink: 'Acessar site',
+        githubBtn: 'Ver código',
         contactTitle: 'Contato',
-        contactDesc: 'Quer trocar uma ideia ou trabalhar junto? Entre em contato comigo pelo <a href="mailto:adlercoelhosantos12@gmail.com" class="text-primary dark:text-primary hover:underline font-medium">e-mail</a> ou pelas redes sociais acima. Estou sempre aberto a novas oportunidades e colaborações!',
+        contactCTA: 'Vamos construir algo juntos?',
+        contactSubtitle: 'Estou disponível para novos projetos, oportunidades e colaborações. Me chama!',
+        sendEmailBtn: 'Enviar mensagem',
+        copyEmailBtn: 'Copiar e-mail',
+        copyEmailSuccess: 'E-mail copiado! ✓',
         footerText: 'Feito com HTML semântico e acessível.',
         socialLabel: 'Redes sociais',
         langAriaLabel: 'Selecionar idioma',
         langTitle: 'Alternar idioma',
         themeToggleDark: 'Alternar para modo escuro',
         themeToggleLight: 'Alternar para modo claro',
-        projectsTitle: "Meus Projetos",
-        meuCofrinSubtitle: "Controle suas finanças com inteligência",
-        meuCofrinDesc: "Um projeto de finanças pessoais desenvolvido para ajudar no controle de gastos e planejamento financeiro de forma simples e intuitiva.",
-        meuCofrinLink: "Acessar site",
-
     },
     en: {
         skipLink: 'Skip to main content',
         themeLabel: 'Theme',
-        heroTitle: 'Hi, I\'m <strong class="dark:text-primary efeito-escrita font-mono">Adler</strong><span class="piscar dark:text-primary">_</span>',
+        navAbout: 'About',
+        navProjects: 'Projects',
+        navStack: 'Stack',
+        navContact: 'Contact',
+        availableBadge: 'On-line',
+        heroTitle: 'Hi, I\'m <strong class="efeito-escrita text-gradient font-mono">Adler</strong><span class="animate-blink" style="color: var(--accent);">_</span>',
         heroDesc: 'Developer passionate for technology, accessibility, and web development best practices.',
+        contactBtnLabel: 'Contact',
         aboutTitle: 'About me',
         aboutDesc: 'I\'m a developer experienced in building modern, performant, and accessible web applications. I believe technology should be inclusive and that good development practices make all the difference in user experience. I\'m always looking to learn new technologies to improve my current skills.',
+        metricA11y: 'Accessibility WCAG',
+        metricVitals: 'Web Vitals (LCP/FID/CLS)',
+        metricCode: 'Clean Code',
+        stackTitle: 'Stack & Skills',
+        projectsTitle: 'Projects',
+        projectStatus: 'Active / In production',
+        meuCofrinSubtitle: 'Smartly control your finances',
+        meuCofrinDesc: 'A personal finance project developed to help with spending control and financial planning in a simple and intuitive way.',
+        meuCofrinLink: 'Access site',
+        githubBtn: 'View code',
         contactTitle: 'Contact',
-        contactDesc: 'Want to chat or work together? Reach me by <a href="mailto:adlercoelhosantos12@gmail.com" class="text-primary dark:text-primary hover:underline font-medium">e-mail</a> or through my social links above. I\'m always open to new opportunities and collaborations!',
+        contactCTA: 'Let\'s build something together?',
+        contactSubtitle: 'I\'m available for new projects, opportunities and collaborations. Reach out!',
+        sendEmailBtn: 'Send message',
+        copyEmailBtn: 'Copy e-mail',
+        copyEmailSuccess: 'Email copied! ✓',
         footerText: 'Made with semantic and accessible HTML.',
         socialLabel: 'Social links',
         langAriaLabel: 'Select language',
         langTitle: 'Toggle language',
         themeToggleDark: 'Switch to dark mode',
         themeToggleLight: 'Switch to light mode',
-        projectsTitle: "Projects",
-        meuCofrinSubtitle: "Smartly control your finances",
-        meuCofrinDesc: "A personal finance project developed to help with spending control and financial planning in a simple and intuitive way.",
-        meuCofrinLink: "Access site"
     }
 };
 
 const langToggle = document.getElementById('lang-toggle');
-const langFlag = langToggle.querySelector('span[aria-hidden]');
-const langLabel = langToggle.querySelector('span.hidden');
 let currentLang = localStorage.getItem('lang') || 'pt';
 
 function setLanguage(lang) {
@@ -91,85 +119,119 @@ function setLanguage(lang) {
     const t = translations[lang];
     if (!t) return;
 
-    // Update text content for data-i18n elements
+    // data-i18n (textContent)
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (t[key]) el.textContent = t[key];
+        if (t[key] !== undefined) el.textContent = t[key];
     });
 
-    // Update innerHTML for data-i18n-html elements
+    // data-i18n-html (innerHTML)
     document.querySelectorAll('[data-i18n-html]').forEach(el => {
         const key = el.getAttribute('data-i18n-html');
-        if (t[key]) el.innerHTML = t[key];
+        if (t[key] !== undefined) el.innerHTML = t[key];
     });
 
-    // Update social links aria-label
-    const socialList = document.querySelector('ul[aria-label]');
-    if (socialList) socialList.setAttribute('aria-label', t.socialLabel);
+    // lang toggle button
+    if (langToggle) {
+        const flagSpan = langToggle.querySelector('span[aria-hidden]');
+        const labelSpan = langToggle.querySelector('span.hidden, span.sm\\:inline');
+        if (flagSpan) flagSpan.textContent = lang === 'pt' ? '🇧🇷' : '🇺🇸';
+        if (labelSpan) labelSpan.textContent = lang === 'pt' ? 'PT' : 'EN';
+        langToggle.setAttribute('aria-label', t.langAriaLabel);
+        langToggle.setAttribute('title', t.langTitle);
+    }
 
-    // Update lang toggle button
-    langFlag.textContent = lang === 'pt' ? '🇧🇷' : '🇺🇸';
-    langLabel.textContent = lang === 'pt' ? 'PT' : 'EN';
-    langToggle.setAttribute('aria-label', t.langAriaLabel);
-    langToggle.setAttribute('title', t.langTitle);
-
-    // Update theme toggle aria-label
+    // theme toggle
     const isDark = document.documentElement.classList.contains('dark');
-    themeToggle.setAttribute('aria-label', isDark ? t.themeToggleLight : t.themeToggleDark);
+    themeToggle?.setAttribute('aria-label', isDark ? t.themeToggleLight : t.themeToggleDark);
 
-    // Update html lang attribute
+    // html lang
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
 
     localStorage.setItem('lang', lang);
 }
 
-// Initialize language
-const savedLang = localStorage.getItem('lang') || 'pt';
-setLanguage(savedLang);
+// Init
+setLanguage(currentLang);
 
-// Language toggle click
-langToggle.addEventListener('click', () => {
-    const currentLang = localStorage.getItem('lang') || 'pt';
-    setLanguage(currentLang === 'pt' ? 'en' : 'pt');
+langToggle?.addEventListener('click', () => {
+    const cur = localStorage.getItem('lang') || 'pt';
+    setLanguage(cur === 'pt' ? 'en' : 'pt');
 });
 
-// Menu hamburger para mobile
-// const menuToggle = document.getElementById('menu-toggle');
-// const navMenu = document.getElementById('nav-menu');
-// const menuIcon = document.getElementById('menu-icon');
+// ── Copiar e-mail ──────────────────────────────────
+const copyEmailBtn = document.getElementById('copy-email-btn');
+const copyEmailLabel = document.getElementById('copy-email-label');
+const EMAIL = 'adlercoelhosantos12@gmail.com';
 
-// menuToggle.addEventListener('click', () => {
-//     const isOpen = !navMenu.classList.contains('hidden');
-//     navMenu.classList.toggle('hidden');
-//     menuToggle.setAttribute('aria-expanded', !isOpen);
-//     menuIcon.textContent = isOpen ? '☰' : '✕';
-// });
+copyEmailBtn?.addEventListener('click', async () => {
+    try {
+        await navigator.clipboard.writeText(EMAIL);
+        const t = translations[currentLang];
+        if (copyEmailLabel) {
+            const original = copyEmailLabel.textContent;
+            copyEmailLabel.textContent = t.copyEmailSuccess || 'Copiado! ✓';
+            copyEmailBtn.style.background = 'rgba(34,197,94,0.2)';
+            copyEmailBtn.style.borderColor = 'rgba(34,197,94,0.4)';
+            setTimeout(() => {
+                copyEmailLabel.textContent = original;
+                copyEmailBtn.style.background = '';
+                copyEmailBtn.style.borderColor = '';
+            }, 2500);
+        }
+    } catch {
+        // Fallback for older browsers
+        const el = document.createElement('input');
+        el.value = EMAIL;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    }
+});
 
-// Fechar menu ao clicar em um link (mobile)
-// navMenu.querySelectorAll('a').forEach(link => {
-//     link.addEventListener('click', () => {
-//         if (window.innerWidth < 640) {
-//             navMenu.classList.add('hidden');
-//             menuToggle.setAttribute('aria-expanded', 'false');
-//             menuIcon.textContent = '☰';
-//         }
-//     });
-// });
+// ── Bottom Nav: active state on scroll ────────────────
+const sections = ['sobre', 'projetos', 'stack', 'contato'];
+const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
 
-// Easter egg: triple click na foto de perfil
+function updateBottomNav() {
+    if (window.innerWidth >= 1024) return; // desktop: skip
+
+    let current = '';
+    sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.4) current = id;
+    });
+
+    bottomNavItems.forEach(item => {
+        const sec = item.getAttribute('data-section');
+        item.classList.toggle('active', sec === current);
+    });
+}
+
+window.addEventListener('scroll', updateBottomNav, { passive: true });
+updateBottomNav();
+
+// ── Easter egg: triple-click on profile photo ──────────
 let clickCount = 0;
 let clickTimer = null;
-document.getElementById('profile-photo')?.addEventListener('click', () => {
+
+function handleProfileClick() {
     clickCount++;
     clearTimeout(clickTimer);
     if (clickCount === 3) {
         clickCount = 0;
-        if (currentLang.trim().startsWith('pt')) {
+        if (currentLang.startsWith('pt')) {
             alert('Mari te amo muitão <3');
         } else {
             alert('Mari I love you so much <3');
         }
     } else {
-        clickTimer = setTimeout(() => { clickCount = 0; }, 500);
+        clickTimer = setTimeout(() => { clickCount = 0; }, 600);
     }
-});
+}
+
+document.getElementById('profile-photo')?.addEventListener('click', handleProfileClick);
+document.getElementById('profile-photo-mobile')?.addEventListener('click', handleProfileClick);
